@@ -91,4 +91,46 @@ describe('calculateOrderPrice', () => {
       })
     })
   })
+
+  describe('when buying 10 documents with promo FF9543D1', () => {
+    const price = calculateOrderPrice({
+      orderItems: [
+        {
+          productId: 'docgen',
+          quantity: 10,
+        },
+      ],
+      products: PRODUCTS,
+      promoCode: 'FF9543D1',
+    })
+    it('should return the correct total price and discounted price', () => {
+      expect(price).toEqual({
+        total: 99.9,
+        discountedTotal: 89.9,
+      })
+    })
+  })
+
+  describe('when buying 10 documents and 1 wf with promo FF9543D1', () => {
+    const price = calculateOrderPrice({
+      orderItems: [
+        {
+          productId: 'docgen',
+          quantity: 10,
+        },
+        {
+          productId: 'wf',
+          quantity: 1,
+        },
+      ],
+      products: PRODUCTS,
+      promoCode: 'FF9543D1',
+    })
+    it('should return the correct total price and discounted price', () => {
+      expect(price).toEqual({
+        total: 299.89,
+        discountedTotal: 289.89,
+      })
+    })
+  })
 })
