@@ -16,7 +16,7 @@ module.exports = ({ orderItems, products }) => {
     )
   )
 
-  return getTotalFromOrderItems(products)(orderItems)
+  return calculateTotalFromOrderItems(products)(orderItems)
 }
 
 /**
@@ -27,7 +27,7 @@ const getWorkflowsCount = pipe(
   reduce((count, item) => count + item.quantity, 0)
 )
 
-const getTotalFromOrderItems = products =>
+const calculateTotalFromOrderItems = products =>
   reduce((total, item) => {
     if (item.productId === 'form') {
       return total + item.quantity * 89.99

@@ -12,7 +12,7 @@ const calculateOrderPrice = pipe(
     orderItems,
     products,
     promoCode,
-    total: getTotalFromOrderItems({ products })(orderItems),
+    total: calculateTotalFromOrderItems({ products })(orderItems),
   }),
   when(
     ({ promoCode }) => !!promoCode,
@@ -37,7 +37,7 @@ function toPrice(price) {
  * @param {object} input
  * @param {Record<string, IProduct>} input.products
  */
-const getTotalFromOrderItems = ({ products }) =>
+const calculateTotalFromOrderItems = ({ products }) =>
   reduce((total, item) => {
     return total + item.quantity * products[item.productId].price
   }, 0)
