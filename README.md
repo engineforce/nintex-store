@@ -30,3 +30,13 @@
 3. Click checkout
 4. Show summary of the order: items, quantity, total price
 5. Click cancel to clear all items in the cart
+
+# Development
+
+## Design decisions
+
+```
+Using node 8 which supports native async await and many ES6 features such as const.
+
+Avoid transpilation for libraries such as packages/price-calculator
+```
