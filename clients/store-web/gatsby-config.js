@@ -9,11 +9,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: 'product-images',
+        path: `${__dirname}/src/components/product-image/images`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        // Space: The example project
+        spaceId: `ss6bwxb9u7jw`,
+        accessToken: process.env.NINTEX_CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
 }

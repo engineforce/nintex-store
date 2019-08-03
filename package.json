@@ -2,7 +2,6 @@
   "name": "nintex-store",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "install": "lerna bootstrap",
     "test": "lerna run test --stream"
@@ -11,7 +10,6 @@
   "author": "Paul Li",
   "license": "MIT",
   "devDependencies": {
-    "gatsby-cli": "^2.7.26",
     "lerna": "^3.16.4"
   }
 }
