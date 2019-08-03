@@ -1,3 +1,9 @@
+# nintex-store
+
+Online store with great promotions.
+
+[![Build Status][1]][2]
+
 # Top Level Design
 
 <img src="top-level.svg" />
@@ -31,12 +37,13 @@
 4. Show summary of the order: items, quantity, total price
 5. Click cancel to clear all items in the cart
 
-# Development
-
-## Design decisions
+# Design decisions
 
 ```
 Using node 8 which supports native async await and many ES6 features such as const.
 
 Avoid transpilation for libraries such as packages/price-calculator
 ```
+
+[1]: https://travis-ci.com/engineforce/nintex-store.svg?branch=master
+[2]: https://travis-ci.com/engineforce/nintex-store
