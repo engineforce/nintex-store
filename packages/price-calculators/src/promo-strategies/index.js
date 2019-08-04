@@ -1,6 +1,3 @@
-const assert = require('assert')
-const errcode = require('err-code')
-
 // It is hard to define good function names for promotions,
 // they may cause more confusion than the promo codes, which
 // are already known by the domain expert.
@@ -25,19 +22,12 @@ const ERR_INVALID_PROMO_CODE = 'ERR_INVALID_PROMO_CODE'
  * @returns {number}
  */
 function applyPromo({ promoCode, orderItems, products, total }) {
-  assert(
-    strategies[promoCode],
-    errcode(
-      new Error(`Promo ${promoCode} does not exist.`),
-      ERR_INVALID_PROMO_CODE,
-      {
-        promoCode,
-      }
-    )
-  )
+  if (strategies[promoCode]) {
+    const promoStrategy = strategies[promoCode]
+    return promoStrategy({ orderItems, products, total })
+  }
 
-  const promoStrategy = strategies[promoCode]
-  return promoStrategy({ orderItems, products, total })
+  return total
 }
 
 module.exports = { applyPromo, ERR_INVALID_PROMO_CODE }

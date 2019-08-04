@@ -16,6 +16,7 @@
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",
+    "price-calculators": "^1.0.0",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "^16.8.6",

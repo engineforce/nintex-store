@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { Root, NavItem } from './styled'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import { reduce } from 'ramda'
 
 const GET_ORDER_ITEMS = gql`
   {
@@ -23,12 +24,16 @@ const Navigation = () => (
     </NavItem>
     <NavItem>
       <Query query={GET_ORDER_ITEMS} fetchPolicy={'cache-only'}>
-        {({ data, loading, error }) => {
+        {({ data, loading, error = undefined }) => {
           return (
             <Link to="/cart">
               Cart (
               {!loading && !error && data.orderItems
-                ? data.orderItems.length
+                ? reduce(
+                    (count, item) => count + item.quantity,
+                    0,
+                    data.orderItems
+                  )
                 : 0}
               )
             </Link>

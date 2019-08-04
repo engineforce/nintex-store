@@ -1,22 +1,15 @@
 // Reduces the docgen price to $8.99 a unit when at least 10 documents are purchased
 
-const assert = require('assert')
-const errcode = require('err-code')
 const { pipe, filter, reduce } = require('ramda')
 
 const THRESHOLD = 10
-const ERR_DOCGEN_COUNT = 'ERR_DOCGEN_COUNT'
 
-module.exports = ({ orderItems, products }) => {
-  assert(
-    getDocumentsCount(orderItems) >= THRESHOLD,
-    errcode(
-      new Error(`Number of documents are less than ${THRESHOLD}`),
-      ERR_DOCGEN_COUNT
-    )
-  )
+module.exports = ({ orderItems, products, total }) => {
+  if (getDocumentsCount(orderItems) >= THRESHOLD) {
+    return calculateTotalFromOrderItems(products)(orderItems)
+  }
 
-  return calculateTotalFromOrderItems(products)(orderItems)
+  return total
 }
 
 /**
