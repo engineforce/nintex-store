@@ -1,6 +1,12 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import ProductImage from '../product-image'
+import { Root, Product } from './styled'
+import Spacer from '../spacer'
+const formatCurrency = new Intl.NumberFormat('en-AU', {
+  style: 'currency',
+  currency: 'AUD',
+}).format
 
 const Products = () => {
   const {
@@ -24,14 +30,18 @@ const Products = () => {
   const products = edges.map(edge => edge.node)
 
   return (
-    <ul>
-      {products.map(({ productId }) => (
-        <li>
-          {productId}
-          <ProductImage key={productId} productId={productId} />
-        </li>
+    <Root>
+      {products.map(({ productId, name, price }) => (
+        <Product>
+          <Link to={`/products/${productId}`}>
+            <ProductImage key={productId} productId={productId} />
+          </Link>
+          <Spacer />
+          <div>{name}</div>
+          <div>{formatCurrency(price)}</div>
+        </Product>
       ))}
-    </ul>
+    </Root>
   )
 }
 

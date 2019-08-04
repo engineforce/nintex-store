@@ -8,9 +8,6 @@ const Navigation = () => (
       <Link to="/">Home</Link>
     </NavItem>
     <NavItem>
-      <Link to="/about">About</Link>
-    </NavItem>
-    <NavItem>
       <Link to="/products">Products</Link>
     </NavItem>
   </Root>
