@@ -10,6 +10,8 @@ import {
   QuantityWrapper,
 } from './styled'
 import Spacer from '../spacer'
+import { ApolloConsumer, Query } from 'react-apollo'
+import gql from 'graphql-tag'
 const formatCurrency = new Intl.NumberFormat('en-AU', {
   style: 'currency',
   currency: 'AUD',
@@ -30,9 +32,8 @@ const Product = ({ product }) => {
           <div>Quantity</div> {` `}
           <Input value={1}></Input>
         </QuantityWrapper>
-        <div>
-          <AddButton>ADD TO CART</AddButton>
-        </div>
+        {/* Paul Debug */}
+        <AddToCart productId={productId} quantity={1} />
         <Hr />
         <div>
           <h2>Product Info</h2>
@@ -42,5 +43,46 @@ const Product = ({ product }) => {
     </Root>
   )
 }
+
+const GET_ORDER_ITEMS = gql`
+  {
+    orderItems @client {
+      productId
+      quantity
+    }
+  }
+`
+
+const AddToCart = ({ productId, quantity }) => (
+  <div>
+    <Query query={GET_ORDER_ITEMS} fetchPolicy={'cache-only'}>
+      {({ data, loading, error, client }) => {
+        if (loading) return <p>Loading...</p>
+
+        const orderItems = !error && data.orderItems ? data.orderItems : []
+        return (
+          <AddButton
+            onClick={() => {
+              client.writeData({
+                data: {
+                  orderItems: [
+                    ...orderItems,
+                    {
+                      productId,
+                      quantity,
+                      __typename: 'OrderItem',
+                    },
+                  ],
+                },
+              })
+            }}
+          >
+            ADD TO CART
+          </AddButton>
+        )
+      }}
+    </Query>
+  </div>
+)
 
 export default Product

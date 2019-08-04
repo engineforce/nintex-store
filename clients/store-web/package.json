@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "author": "Paul Li",
   "dependencies": {
+    "apollo-boost": "^0.4.3",
+    "apollo-cache-persist": "^0.1.1",
     "gatsby": "^2.13.45",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -13,9 +15,11 @@
     "gatsby-source-contentful": "^2.1.17",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.3.2"
