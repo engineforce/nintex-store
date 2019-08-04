@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { applySpec, pipe, prop, path } from 'ramda'
 
 // Components
@@ -32,6 +31,7 @@ export const pageQuery = graphql`
     contentfulProduct(productId: { eq: $productId }) {
       productId
       name
+      price
       description {
         description
       }

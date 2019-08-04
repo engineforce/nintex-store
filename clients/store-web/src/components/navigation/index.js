@@ -10,6 +10,9 @@ const Navigation = () => (
     <NavItem>
       <Link to="/products">Products</Link>
     </NavItem>
+    <NavItem>
+      <Link to="/cart">Cart</Link>
+    </NavItem>
   </Root>
 )
 

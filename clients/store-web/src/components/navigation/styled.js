@@ -11,4 +11,5 @@ export const Root = styled.div`
 
 export const NavItem = styled.div`
   width: 100px;
+  text-align: center;
 `

@@ -8,4 +8,5 @@ export const Root = styled.footer`
   align-content: center;
   align-items: flex-start;
   margin-top: 20px;
+  margin-bottom: 50px;
 `
