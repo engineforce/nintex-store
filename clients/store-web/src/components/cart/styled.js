@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Root = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
@@ -52,4 +52,10 @@ export const Input = styled.input`
   padding-left: 5px;
   padding-right: 5px;
   width: 80%;
+`
+
+export const EmptyButton = styled.button`
+  margin-bottom: 20px;
+  color: rgb(255, 124, 89);
+  padding: 5px 30px;
 `
