@@ -1,8 +1,8 @@
 # nintex-store
 
-Online store with great promotions.
+Online store with great promotions. https://nintex-store-engineforce.netlify.com/
 
-[![Build Status][1]][2]
+[![Build Status][1]][2] [![Netlify Status][3]][4]
 
 # Design decisions
 
@@ -26,3 +26,5 @@ Online store with great promotions.
 
 [1]: https://travis-ci.com/engineforce/nintex-store.svg?branch=master
 [2]: https://travis-ci.com/engineforce/nintex-store
+[3]: https://api.netlify.com/api/v1/badges/e3ce6e44-a5c2-4b83-8d5e-30ab4e9841ef/deploy-status
+[4]: https://app.netlify.com/sites/nintex-store-engineforce/deploys
