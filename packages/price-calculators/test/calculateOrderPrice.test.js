@@ -42,7 +42,8 @@ describe('calculateOrderPrice', () => {
       promoCode: '1234',
       products: PRODUCTS,
     })
-    it('should return the correct total price and no discounted price', () => {
+    it(`should return the correct total price, and discounted price that is 
+        equal to the total price because promo code is not applicable`, () => {
       expect(price).toEqual({
         total: 399.98,
         discountedTotal: 399.98,
@@ -80,7 +81,8 @@ describe('calculateOrderPrice', () => {
       products: PRODUCTS,
       promoCode: 'RRD4D32',
     })
-    it('should return the correct total price and discounted price', () => {
+    it(`should return the correct total price, and discounted price that is 
+        equal to the total price because promo code is not applicable`, () => {
       expect(price).toEqual({
         total: 999.95,
         discountedTotal: 999.95,
@@ -118,7 +120,8 @@ describe('calculateOrderPrice', () => {
       products: PRODUCTS,
       promoCode: '44F4T11',
     })
-    it('should return the correct total price and discounted price', () => {
+    it(`should return the correct total price, and discounted price that is 
+        equal to the total price because promo code is not applicable`, () => {
       expect(price).toEqual({
         total: 1199.94,
         discountedTotal: 1199.94,
