@@ -26,6 +26,9 @@ describe('CartPage', () => {
     it('', () => {
       /** @type {renderer.ReactTestRenderer} */
       const home = create.mock.results[0].value
+
+      // TODO: This is a lazy way to write test, fix it
+      // to validate only business logic data
       expect(home.toJSON()).toMatchSnapshot()
     })
   })
@@ -60,6 +63,9 @@ describe('CartPage', () => {
     it('', () => {
       /** @type {renderer.ReactTestRenderer} */
       const home = create.mock.results[0].value
+
+      // TODO: This is a lazy way to write test, fix it
+      // to validate only business logic data
       expect(home.toJSON()).toMatchSnapshot()
     })
   })
