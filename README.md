@@ -10,6 +10,8 @@ Online store with great promotions. https://nintex-store-engineforce.netlify.com
 git clone git@github.com:engineforce/nintex-store.git
 cd nintex-store
 
+export NINTEX_CONTENTFUL_ACCESS_TOKEN=<contentful space access token>
+
 npm install
 npm test
 npm run dev
