@@ -16,13 +16,9 @@ import {
 } from './styled'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
-import { pipe, reduce, map, prop } from 'ramda'
-import { calculateOrderPrice } from 'price-calculators'
-
-const formatCurrency = new Intl.NumberFormat('en-AU', {
-  style: 'currency',
-  currency: 'AUD',
-}).format
+import { pipe, reduce, map, prop, propEq, findIndex } from 'ramda'
+import { Total } from './total'
+import { formatCurrency } from '../../libs/formatCurrency'
 
 const GET_ORDER_ITEMS = gql`
   {
@@ -59,7 +55,7 @@ const Cart = () => {
   return (
     <Root>
       <Query query={GET_ORDER_ITEMS} fetchPolicy={'cache-only'}>
-        {({ data, loading, error = undefined }) => {
+        {({ data, loading, error = undefined, client }) => {
           if (loading) return <p>Loading...</p>
 
           const orderItems = !error && data.orderItems ? data.orderItems : []
@@ -84,10 +80,26 @@ const Cart = () => {
                         {name}
                       </Product>
                     </DescriptionColumn>
-                    <PriceColumn>{price}</PriceColumn>
-                    {/* Paul Debug: quantity cannot be changed yet */}
+                    <PriceColumn>{formatCurrency(price)}</PriceColumn>
                     <QuantityColumn>
-                      <Input value={quantity}></Input>
+                      <Input
+                        value={quantity}
+                        onChange={event => {
+                          const newQuantity = parseInt(event.target.value)
+
+                          if (!isNaN(newQuantity)) {
+                            client.writeData({
+                              data: {
+                                orderItems: updateOrderItemQuantity({
+                                  orderItems,
+                                  productId,
+                                  quantity: newQuantity,
+                                }),
+                              },
+                            })
+                          }
+                        }}
+                      ></Input>
                     </QuantityColumn>
                   </Row>
                 )
@@ -103,11 +115,11 @@ const Cart = () => {
                   />
                 </Column>
                 <Column>
-                  {renderTotal({
-                    orderItems,
-                    products,
-                    promoCode,
-                  })}
+                  <Total
+                    orderItems={orderItems}
+                    products={products}
+                    promoCode={promoCode}
+                  />
                 </Column>
               </Row>
             </Grid>
@@ -118,26 +130,15 @@ const Cart = () => {
   )
 }
 
-function renderTotal({ orderItems, products, promoCode }) {
-  const { total, discountedTotal } = calculateOrderPrice({
-    orderItems,
-    products,
-    promoCode,
+function updateOrderItemQuantity({ orderItems, productId, quantity }) {
+  const foundIndex = findIndex(propEq('productId', productId))(orderItems)
+
+  return Object.assign([...orderItems], {
+    [foundIndex]: {
+      ...orderItems[foundIndex],
+      quantity: quantity,
+    },
   })
-
-  return (
-    <>
-      <span>Total</span>
-      <div>{formatCurrency(total)}</div>
-
-      {discountedTotal && discountedTotal !== total && (
-        <>
-          <span>Discounted Total</span>
-          <div>{formatCurrency(discountedTotal)}</div>
-        </>
-      )}
-    </>
-  )
 }
 
 const getProductsMap = pipe(

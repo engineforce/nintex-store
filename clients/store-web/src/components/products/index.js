@@ -3,10 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import ProductImage from '../product-image'
 import { Root, Product, ProductWrapper } from './styled'
 import Spacer from '../spacer'
-const formatCurrency = new Intl.NumberFormat('en-AU', {
-  style: 'currency',
-  currency: 'AUD',
-}).format
+import { formatCurrency } from '../../libs/formatCurrency'
 
 const Products = () => {
   const {
@@ -32,7 +29,7 @@ const Products = () => {
   return (
     <Root>
       {products.map(({ productId, name, price }) => (
-        <ProductWrapper>
+        <ProductWrapper key={productId}>
           <Link to={`/products/${productId}`}>
             <Product>
               <ProductImage key={productId} productId={productId} />

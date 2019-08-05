@@ -10,7 +10,7 @@ import Product from '../components/product'
 const ProductPage = ({ pageContext: { productId }, data }) => {
   return (
     <Layout>
-      <SEO title={`Product - ${data.name}`} />
+      <SEO title={`Product - ${data.contentfulProduct.name}`} />
       <Product product={getProduct(data)} />
     </Layout>
   )

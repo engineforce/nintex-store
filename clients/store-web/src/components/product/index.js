@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductImage from '../product-image'
 import { Root, ImageWrapper, Info, Hr, Input, QuantityWrapper } from './styled'
 import Spacer from '../spacer'
 import { AddToCart } from './addToCart'
-
-const formatCurrency = new Intl.NumberFormat('en-AU', {
-  style: 'currency',
-  currency: 'AUD',
-}).format
+import { formatCurrency } from '../../libs/formatCurrency'
 
 const Product = ({ product }) => {
+  const [quantity, setQuantity] = useState(1)
+
   const { productId, name, price, description } = product
   return (
     <Root>
@@ -22,10 +20,18 @@ const Product = ({ product }) => {
         <div>{formatCurrency(price)}</div>
         <QuantityWrapper>
           <div>Quantity</div> {` `}
-          <Input value={1}></Input>
+          <Input
+            value={quantity}
+            onChange={event => {
+              const newQuantity = parseInt(event.target.value)
+
+              if (!isNaN(newQuantity)) {
+                setQuantity(newQuantity)
+              }
+            }}
+          ></Input>
         </QuantityWrapper>
-        {/* Paul Debug: quantity is hard coded */}
-        <AddToCart productId={productId} quantity={1} />
+        <AddToCart productId={productId} quantity={quantity} />
         <Hr />
         <div>
           <h2>Product Info</h2>

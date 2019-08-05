@@ -21,8 +21,7 @@ Online store with great promotions. https://nintex-store-engineforce.netlify.com
 1. Error handling: Setup [error handling properly in react](https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html).
 2. Unit tests / Integration test: `packages/price-calculators` has 100% test coverage. Write more tests for `store-web`.
 3. Styling: Fix the look and feel.
-4. Refactor: Fix duplications such as `formatCurrency` to a shared package
-5. Refactor: Move business logic out of the components
+4. Refactor: Move business logic out of the components
 
 [1]: https://travis-ci.com/engineforce/nintex-store.svg?branch=master
 [2]: https://travis-ci.com/engineforce/nintex-store
