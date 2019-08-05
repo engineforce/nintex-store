@@ -4,6 +4,19 @@ Online store with great promotions. https://nintex-store-engineforce.netlify.com
 
 [![Build Status][1]][2] [![Netlify Status][3]][4]
 
+# Get Started
+
+```
+git clone git@github.com:engineforce/nintex-store.git
+cd nintex-store
+
+npm install
+npm test
+npm run dev
+```
+
+Navigate to http://localhost:8000/products or https://nintex-store-engineforce.netlify.com/products (hosted on netlify)
+
 # Design decisions
 
 1. This is a monorepo managed by [lerna](https://github.com/lerna/lerna).
