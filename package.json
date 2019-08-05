@@ -5,6 +5,7 @@
   "scripts": {
     "clean": "lerna clean --yes && rm -rf node_modules/",
     "install": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
     "test": "lerna run test --stream"
   },
   "keywords": [],
