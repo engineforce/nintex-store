@@ -16,7 +16,7 @@ module.exports = ({ orderItems, products, total }) => {
  * @type { (orderItems: any[]) => number }
  */
 const getWorkflowsCount = pipe(
-  filter(orderItem => orderItem.productId == 'wf'),
+  filter(orderItem => orderItem.productId === 'wf'),
   reduce((count, item) => count + item.quantity, 0)
 )
 

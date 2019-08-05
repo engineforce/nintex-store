@@ -16,7 +16,7 @@ module.exports = ({ orderItems, products, total }) => {
  * @type { (orderItems: any[]) => number }
  */
 const getDocumentsCount = pipe(
-  filter(orderItem => orderItem.productId == 'docgen'),
+  filter(orderItem => orderItem.productId === 'docgen'),
   reduce((count, item) => count + item.quantity, 0)
 )
 

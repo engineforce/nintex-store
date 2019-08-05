@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import ProductImage from '../product-image'
 import {
   Root,

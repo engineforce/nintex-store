@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "",
   "scripts": {
+    "clean": "lerna clean --yes && rm -rf node_modules/",
     "install": "lerna bootstrap",
     "test": "lerna run test --stream"
   },
