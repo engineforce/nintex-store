@@ -96,7 +96,9 @@ const Cart = () => {
                         <Input
                           value={quantity}
                           onChange={event => {
-                            const newQuantity = parseInt(event.target.value)
+                            const newQuantity = parseInt(
+                              event.target.value || '0'
+                            )
 
                             if (!isNaN(newQuantity)) {
                               client.writeData({
