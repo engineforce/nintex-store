@@ -8,8 +8,8 @@ Online store with great promotions. https://nintex-store-engineforce.netlify.com
 
 1. This is a monorepo managed by [lerna](https://github.com/lerna/lerna).
 2. Using `node 8` which supports native async await and many ES6 features such as const.
-3. `packages/price-calculators` is a shared library, ideally, it will be used in the backend; but since you won’t be judging any back-end implementation, I did not write any backend code. However, this package will easily be reused in the backend if required.
-4. Avoid transpilation (babel, typescript, webpack) for libraries such as `packages/price-calculator`, I know that it will not run in old browsers such as IE without transpilation, however, it can easily be set up if required.
+3. Avoid transpilation (babel, typescript, webpack) for libraries such as `packages/price-calculator`, I know that it will not run in old browsers such as IE without transpilation, however, it can easily be set up if required.
+4. `packages/price-calculators` is a shared library, ideally, it will be used in the backend; but since you won’t be judging any back-end implementation, I did not write any backend code. However, this package will easily be reused in the backend if required.
 5. I have named the source files of promo strategies using their promo codes because it is hard to define good function names for them, they may cause more confusion than the promo codes, which are already been known by the domain experts. Obviously, we can discuss the pros and cons if we are working in the same office.
 6. Products (name, descriptions and price) are loaded from [Contentful (headless CMS)](https://www.contentful.com/) at build time by [gatsby](https://www.gatsbyjs.org/). It requires `NINTEX_CONTENTFUL_ACCESS_TOKEN` environment variable set to run `gatsby build` and `gatsby develop`.
 7. Generally, I prefer a flat folder structure, i.e., for `clients/store-web/src/components`, I did not separate `presentational` and `container` components into separate folders. Again we can discuss the pros and cons when working together.
