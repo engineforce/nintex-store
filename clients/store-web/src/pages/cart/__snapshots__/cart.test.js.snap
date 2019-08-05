@@ -282,6 +282,108 @@ Array [
           </div>
         </li>
         <hr />
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            <div
+              className="sc-jTzLTM eoQMeB"
+            >
+              <div
+                className="sc-fjdhpX jOjPCH"
+              >
+                <ProductImage
+                  productId="wf"
+                />
+              </div>
+              Workflow
+            </div>
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            A$199.99
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value={0}
+            />
+          </div>
+        </li>
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            <div
+              className="sc-jTzLTM eoQMeB"
+            >
+              <div
+                className="sc-fjdhpX jOjPCH"
+              >
+                <ProductImage
+                  productId="form"
+                />
+              </div>
+              Form
+            </div>
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            A$99.99
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value={0}
+            />
+          </div>
+        </li>
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            <div
+              className="sc-jTzLTM eoQMeB"
+            >
+              <div
+                className="sc-fjdhpX jOjPCH"
+              >
+                <ProductImage
+                  productId="docgen"
+                />
+              </div>
+              Document Generation
+            </div>
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            A$9.99
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value={0}
+            />
+          </div>
+        </li>
         <hr />
         <li
           className="sc-htoDjs bPGBDH"
