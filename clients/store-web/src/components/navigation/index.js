@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { reduce } from 'ramda'
 
-const GET_ORDER_ITEMS = gql`
+export const GET_ORDER_ITEMS = gql`
   {
     orderItems @client {
       productId
@@ -23,7 +23,7 @@ const Navigation = () => (
       <Link to="/products">Products</Link>
     </NavItem>
     <NavItem>
-      <Query query={GET_ORDER_ITEMS} fetchPolicy={'cache-only'}>
+      <Query query={GET_ORDER_ITEMS}>
         {({ data, loading, error = undefined }) => {
           return (
             <Link to="/cart">

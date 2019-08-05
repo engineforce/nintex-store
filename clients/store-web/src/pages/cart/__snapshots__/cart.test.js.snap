@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartPage when render with 1 item in cart  1`] = `
+Array [
+  <header
+    className="sc-bdVaJa llhFdL"
+  >
+    <h1
+      className="sc-bwzfXH kabNnl"
+    >
+      <a
+        aria-current="page"
+        className=""
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
+      >
+        Online Store
+      </a>
+    </h1>
+  </header>,
+  <nav
+    className="sc-htpNat bRwrsF"
+  >
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        aria-current="page"
+        className=""
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
+      >
+        Home
+      </a>
+    </div>
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        href="/products"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Products
+      </a>
+    </div>
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        href="/cart"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Cart (
+        1
+        )
+      </a>
+    </div>
+  </nav>,
+  <main
+    className="sc-EHOje ksOsdW"
+  >
+    <div
+      className="sc-bZQynM gpiDvX"
+    >
+      <ul
+        className="sc-gzVnrw lfdfns"
+      >
+        <li
+          className="sc-htoDjs sc-dnqmqq BIZtQ"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            My Cart
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            Price
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            Qty
+          </div>
+        </li>
+        <hr />
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            <div
+              className="sc-jTzLTM eoQMeB"
+            >
+              <div
+                className="sc-fjdhpX jOjPCH"
+              >
+                <ProductImage
+                  productId="form"
+                />
+              </div>
+              Form
+            </div>
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            A$99.99
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value={1}
+            />
+          </div>
+        </li>
+        <hr />
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI jQhHGA"
+          >
+            <span>
+              Promo Code
+            </span>
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+          <div
+            className="sc-iwsKbI jQhHGA"
+          >
+            <span>
+              Total
+            </span>
+            <div>
+              A$99.99
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>,
+  <footer
+    className="sc-ifAKCX exVfAp"
+  >
+    <span>
+      Built by 
+       
+       
+      <a
+        href="https://www.linkedin.com/in/paul-li-97381b3/"
+        target="blank"
+      >
+        engineforce
+      </a>
+      , © 
+      2019
+    </span>
+  </footer>,
+]
+`;
+
+exports[`CartPage when render with no item in cart  1`] = `
+Array [
+  <header
+    className="sc-bdVaJa llhFdL"
+  >
+    <h1
+      className="sc-bwzfXH kabNnl"
+    >
+      <a
+        aria-current="page"
+        className=""
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
+      >
+        Online Store
+      </a>
+    </h1>
+  </header>,
+  <nav
+    className="sc-htpNat bRwrsF"
+  >
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        aria-current="page"
+        className=""
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
+      >
+        Home
+      </a>
+    </div>
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        href="/products"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Products
+      </a>
+    </div>
+    <div
+      className="sc-bxivhb cLBQgY"
+    >
+      <a
+        href="/cart"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Cart (
+        0
+        )
+      </a>
+    </div>
+  </nav>,
+  <main
+    className="sc-EHOje ksOsdW"
+  >
+    <div
+      className="sc-bZQynM gpiDvX"
+    >
+      <ul
+        className="sc-gzVnrw lfdfns"
+      >
+        <li
+          className="sc-htoDjs sc-dnqmqq BIZtQ"
+        >
+          <div
+            className="sc-iwsKbI sc-gZMcBi gdTgYj"
+          >
+            My Cart
+          </div>
+          <div
+            className="sc-iwsKbI sc-gqjmRU fQHcrV"
+          >
+            Price
+          </div>
+          <div
+            className="sc-iwsKbI sc-VigVT kGKNKu"
+          >
+            Qty
+          </div>
+        </li>
+        <hr />
+        <hr />
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div
+            className="sc-iwsKbI jQhHGA"
+          >
+            <span>
+              Promo Code
+            </span>
+            <input
+              className="sc-jzJRlG fsfCyH"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+          <div
+            className="sc-iwsKbI jQhHGA"
+          >
+            <span>
+              Total
+            </span>
+            <div>
+              A$0.00
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>,
+  <footer
+    className="sc-ifAKCX exVfAp"
+  >
+    <span>
+      Built by 
+       
+       
+      <a
+        href="https://www.linkedin.com/in/paul-li-97381b3/"
+        target="blank"
+      >
+        engineforce
+      </a>
+      , © 
+      2019
+    </span>
+  </footer>,
+]
+`;

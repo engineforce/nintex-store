@@ -54,7 +54,7 @@ const Cart = () => {
 
   return (
     <Root>
-      <Query query={GET_ORDER_ITEMS} fetchPolicy={'cache-only'}>
+      <Query query={GET_ORDER_ITEMS}>
         {({ data, loading, error = undefined, client }) => {
           if (loading) return <p>Loading...</p>
 
