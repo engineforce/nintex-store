@@ -68,17 +68,21 @@ Array [
     <div
       className="sc-bZQynM iwmxdw"
     >
-      <div>
-        <button
-          className="sc-cSHVUG iFKOBr"
-          onClick={[Function]}
-        >
-          EMPTY CART
-        </button>
-      </div>
       <ul
         className="sc-gzVnrw lfdfns"
       >
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div>
+            <button
+              className="sc-cSHVUG iFKOBr"
+              onClick={[Function]}
+            >
+              EMPTY CART
+            </button>
+          </div>
+        </li>
         <li
           className="sc-htoDjs sc-dnqmqq BIZtQ"
         >
@@ -251,17 +255,21 @@ Array [
     <div
       className="sc-bZQynM iwmxdw"
     >
-      <div>
-        <button
-          className="sc-cSHVUG iFKOBr"
-          onClick={[Function]}
-        >
-          EMPTY CART
-        </button>
-      </div>
       <ul
         className="sc-gzVnrw lfdfns"
       >
+        <li
+          className="sc-htoDjs bPGBDH"
+        >
+          <div>
+            <button
+              className="sc-cSHVUG iFKOBr"
+              onClick={[Function]}
+            >
+              EMPTY CART
+            </button>
+          </div>
+        </li>
         <li
           className="sc-htoDjs sc-dnqmqq BIZtQ"
         >

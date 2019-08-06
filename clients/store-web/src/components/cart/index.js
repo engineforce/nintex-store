@@ -57,66 +57,71 @@ const Cart = () => {
     <Root>
       <Query query={GET_ORDER_ITEMS}>
         {({ data, loading, error = undefined, client }) => {
-          if (loading) return <p>Loading...</p>
-
-          const orderItems = !error && data.orderItems ? data.orderItems : []
+          const orderItems =
+            !loading && !error && data.orderItems ? data.orderItems : []
 
           return (
             <>
-              {/*Added to simplify user testing*/}
-              <EmptyCart
-                client={client}
-                products={products}
-                orderItems={orderItems}
-              />
               <Grid>
+                <Row>
+                  {/*Added to simplify user testing*/}
+                  <EmptyCart
+                    client={client}
+                    products={products}
+                    orderItems={orderItems}
+                  />
+                </Row>
                 <HeaderRow>
                   <DescriptionColumn>My Cart</DescriptionColumn>
                   <PriceColumn>Price</PriceColumn>
                   <QuantityColumn>Qty</QuantityColumn>
                 </HeaderRow>
                 <hr />
-                {orderItems.map(({ productId, quantity }) => {
-                  const { name, price } = products[productId]
-                  return (
-                    <Row key={productId}>
-                      <DescriptionColumn>
-                        <Product>
-                          <ProductImageWrapper>
-                            <ProductImage
-                              key={productId}
-                              productId={productId}
-                            />
-                          </ProductImageWrapper>
-                          {name}
-                        </Product>
-                      </DescriptionColumn>
-                      <PriceColumn>{formatCurrency(price)}</PriceColumn>
-                      <QuantityColumn>
-                        <Input
-                          value={quantity}
-                          onChange={event => {
-                            const newQuantity = parseInt(
-                              event.target.value || '0'
-                            )
+                {loading ? (
+                  <div>Loading...</div>
+                ) : (
+                  orderItems.map(({ productId, quantity }) => {
+                    const { name, price } = products[productId]
+                    return (
+                      <Row key={productId}>
+                        <DescriptionColumn>
+                          <Product>
+                            <ProductImageWrapper>
+                              <ProductImage
+                                key={productId}
+                                productId={productId}
+                              />
+                            </ProductImageWrapper>
+                            {name}
+                          </Product>
+                        </DescriptionColumn>
+                        <PriceColumn>{formatCurrency(price)}</PriceColumn>
+                        <QuantityColumn>
+                          <Input
+                            value={quantity}
+                            onChange={event => {
+                              const newQuantity = parseInt(
+                                event.target.value || '0'
+                              )
 
-                            if (!isNaN(newQuantity)) {
-                              client.writeData({
-                                data: {
-                                  orderItems: updateOrderItemQuantity({
-                                    orderItems,
-                                    productId,
-                                    quantity: newQuantity,
-                                  }),
-                                },
-                              })
-                            }
-                          }}
-                        ></Input>
-                      </QuantityColumn>
-                    </Row>
-                  )
-                })}
+                              if (!isNaN(newQuantity)) {
+                                client.writeData({
+                                  data: {
+                                    orderItems: updateOrderItemQuantity({
+                                      orderItems,
+                                      productId,
+                                      quantity: newQuantity,
+                                    }),
+                                  },
+                                })
+                              }
+                            }}
+                          ></Input>
+                        </QuantityColumn>
+                      </Row>
+                    )
+                  })
+                )}
 
                 <hr />
                 <Row>
