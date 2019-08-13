@@ -1,0 +1,7 @@
+.CommandsNav {
+  flex: 1;
+}
+
+.CommandsNav ul {
+  list-style: none;
+}
